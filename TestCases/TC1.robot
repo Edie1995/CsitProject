@@ -15,7 +15,7 @@ ${improperResult}   6
 *** Test Cases ***
 AddValues
     Create sessions
-    Check status And Content Type  ${val1}  ${val2}
+    Check status And Content Type
     Result Should Be Equals  ${val1}  ${val2}  ${properResult}
     Result Should Not Be Equals   ${val1}  ${val2}   ${improperResult}
 
@@ -30,10 +30,8 @@ Create Dictionary And Send Request
     [Return]    ${response}
 
 Check Status And Content Type
-    [Arguments]     ${val1}     ${val2}
-    ${response}=    Create Dictionary And Send Request  ${val1}     ${val2}
-    Check status  ${response}
-    Check content type  ${response}
+    Check status
+    Check content type
 
 
 Result Should Be Equals
@@ -49,11 +47,11 @@ Result Should Not Be Equals
     should not contain  ${body}     ${result}
 
 Check Content Type
-    [Arguments]  ${response}
+    ${response}=    Create Dictionary And Send Request  ${val1}     ${val2}
     ${contentTypeValue}=    get from dictionary  ${response.headers}     Content-Type
     should be equal     ${contentTypeValue}     application/json
 
 Check Status
-    [Arguments]  ${response}
+    ${response}=    Create Dictionary And Send Request  ${val1}     ${val2}
     ${status_code}=     convert to string   ${response.status_code}
     should be equal     ${status_code}      200
