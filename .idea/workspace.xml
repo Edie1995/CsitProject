@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e493c07-adab-4d5b-86ca-4a30569bc90e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestCases/TC1.robot" beforeDir="false" afterPath="$PROJECT_DIR$/TestCases/TC1.robot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log.html" beforeDir="false" afterPath="$PROJECT_DIR$/log.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output.xml" beforeDir="false" afterPath="$PROJECT_DIR$/output.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/report.html" beforeDir="false" afterPath="$PROJECT_DIR$/report.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +33,13 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="Unnamed" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
@@ -94,10 +104,10 @@
     <state x="693" y="343" width="1022" height="737" key="SettingsEditor/1920.0.1920.1080/0.171.1920.1080@0.171.1920.1080" timestamp="1584719152371" />
     <state x="2613" y="176" key="SettingsEditor/1920.0.1920.1080/0.171.1920.1080@1920.0.1920.1080" timestamp="1584702354571" />
     <state x="738" y="199" width="1022" height="737" key="SettingsEditor/70.27.1850.1053@70.27.1850.1053" timestamp="1584650910672" />
-    <state x="651" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1584720289570">
+    <state x="651" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1584749872839">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
     <state x="603" y="533" key="com.intellij.ide.util.TipDialog/1920.0.1920.1080/0.171.1920.1080@0.171.1920.1080" timestamp="1584700028281" />
-    <state x="651" y="380" key="com.intellij.ide.util.TipDialog/70.27.1850.1053@70.27.1850.1053" timestamp="1584720289570" />
+    <state x="651" y="380" key="com.intellij.ide.util.TipDialog/70.27.1850.1053@70.27.1850.1053" timestamp="1584749872839" />
   </component>
 </project>

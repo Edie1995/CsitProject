@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.1.2 (Python 3.7.5 on linux)" generated="20200320 18:22:27.766" rpa="false">
+<robot generator="Robot 3.1.2 (Python 3.7.5 on linux)" generated="20200321 01:28:18.253" rpa="false">
 <suite id="s1" name="TC1" source="/home/edyta/PycharmProjects/firstOne/TestCases/TC1.robot">
 <test id="s1-t1" name="AddValues">
 <kw name="Create Sessions">
@@ -9,32 +9,56 @@
 <arg>calculator_url</arg>
 <arg>${base_url}</arg>
 </arguments>
-<msg timestamp="20200320 18:22:27.824" level="INFO">Creating Session using : alias=calculator_url, url=http://localhost:8080, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20200320 18:22:27.824" endtime="20200320 18:22:27.825"></status>
+<msg timestamp="20200321 01:28:18.310" level="INFO">Creating Session using : alias=calculator_url, url=http://localhost:8080, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20200321 01:28:18.310" endtime="20200321 01:28:18.310"></status>
 </kw>
-<status status="PASS" starttime="20200320 18:22:27.824" endtime="20200320 18:22:27.825"></status>
+<status status="PASS" starttime="20200321 01:28:18.310" endtime="20200321 01:28:18.311"></status>
 </kw>
 <kw name="Check Status And Content Type">
 <arguments>
 <arg>${val1}</arg>
 <arg>${val2}</arg>
 </arguments>
+<kw name="Create Dictionary And Send Request">
+<arguments>
+<arg>${val1}</arg>
+<arg>${val2}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>val1=${val1}</arg>
+<arg>val2=${val2}</arg>
+</arguments>
+<assign>
+<var>${params}</var>
+</assign>
+<msg timestamp="20200321 01:28:18.311" level="INFO">${params} = {'val1': '4', 'val2': '4'}</msg>
+<status status="PASS" starttime="20200321 01:28:18.311" endtime="20200321 01:28:18.311"></status>
+</kw>
 <kw name="Get Request" library="RequestsLibrary">
 <doc>Send a GET request on the session object found using the
 given `alias`</doc>
 <arguments>
 <arg>calculator_url</arg>
-<arg>${endpoint}val1=${val1}&amp;val2=${val2}</arg>
+<arg>${endpoint}</arg>
+<arg>params=${params}</arg>
 </arguments>
 <assign>
 <var>${response}</var>
 </assign>
-<msg timestamp="20200320 18:22:27.826" level="INFO">GET Request using : uri=/v1/add?val1=4&amp;val2=4, params=None, allow_redirects=True, timeout=None
+<msg timestamp="20200321 01:28:18.312" level="INFO">GET Request using : uri=/v1/add?, params={'val1': '4', 'val2': '4'}, allow_redirects=True, timeout=None
 headers={'User-Agent': 'python-requests/2.23.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
 data=None 
 json=None</msg>
-<msg timestamp="20200320 18:22:27.833" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20200320 18:22:27.825" endtime="20200320 18:22:27.833"></status>
+<msg timestamp="20200321 01:28:18.319" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20200321 01:28:18.312" endtime="20200321 01:28:18.319"></status>
+</kw>
+<msg timestamp="20200321 01:28:18.319" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20200321 01:28:18.311" endtime="20200321 01:28:18.319"></status>
 </kw>
 <kw name="Check Status">
 <arguments>
@@ -48,8 +72,8 @@ json=None</msg>
 <assign>
 <var>${status_code}</var>
 </assign>
-<msg timestamp="20200320 18:22:27.833" level="INFO">${status_code} = 200</msg>
-<status status="PASS" starttime="20200320 18:22:27.833" endtime="20200320 18:22:27.833"></status>
+<msg timestamp="20200321 01:28:18.320" level="INFO">${status_code} = 200</msg>
+<status status="PASS" starttime="20200321 01:28:18.320" endtime="20200321 01:28:18.320"></status>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <doc>Fails if the given objects are unequal.</doc>
@@ -57,9 +81,9 @@ json=None</msg>
 <arg>${status_code}</arg>
 <arg>200</arg>
 </arguments>
-<status status="PASS" starttime="20200320 18:22:27.833" endtime="20200320 18:22:27.834"></status>
+<status status="PASS" starttime="20200321 01:28:18.320" endtime="20200321 01:28:18.320"></status>
 </kw>
-<status status="PASS" starttime="20200320 18:22:27.833" endtime="20200320 18:22:27.834"></status>
+<status status="PASS" starttime="20200321 01:28:18.319" endtime="20200321 01:28:18.320"></status>
 </kw>
 <kw name="Check Content Type">
 <arguments>
@@ -74,8 +98,8 @@ json=None</msg>
 <assign>
 <var>${contentTypeValue}</var>
 </assign>
-<msg timestamp="20200320 18:22:27.834" level="INFO">${contentTypeValue} = application/json</msg>
-<status status="PASS" starttime="20200320 18:22:27.834" endtime="20200320 18:22:27.834"></status>
+<msg timestamp="20200321 01:28:18.321" level="INFO">${contentTypeValue} = application/json</msg>
+<status status="PASS" starttime="20200321 01:28:18.321" endtime="20200321 01:28:18.321"></status>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <doc>Fails if the given objects are unequal.</doc>
@@ -83,11 +107,11 @@ json=None</msg>
 <arg>${contentTypeValue}</arg>
 <arg>application/json</arg>
 </arguments>
-<status status="PASS" starttime="20200320 18:22:27.834" endtime="20200320 18:22:27.834"></status>
+<status status="PASS" starttime="20200321 01:28:18.321" endtime="20200321 01:28:18.321"></status>
 </kw>
-<status status="PASS" starttime="20200320 18:22:27.834" endtime="20200320 18:22:27.835"></status>
+<status status="PASS" starttime="20200321 01:28:18.320" endtime="20200321 01:28:18.321"></status>
 </kw>
-<status status="PASS" starttime="20200320 18:22:27.825" endtime="20200320 18:22:27.835"></status>
+<status status="PASS" starttime="20200321 01:28:18.311" endtime="20200321 01:28:18.321"></status>
 </kw>
 <kw name="Result Should Be Equals">
 <arguments>
@@ -95,22 +119,46 @@ json=None</msg>
 <arg>${val2}</arg>
 <arg>${properResult}</arg>
 </arguments>
+<kw name="Create Dictionary And Send Request">
+<arguments>
+<arg>${val1}</arg>
+<arg>${val2}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>val1=${val1}</arg>
+<arg>val2=${val2}</arg>
+</arguments>
+<assign>
+<var>${params}</var>
+</assign>
+<msg timestamp="20200321 01:28:18.322" level="INFO">${params} = {'val1': '4', 'val2': '4'}</msg>
+<status status="PASS" starttime="20200321 01:28:18.322" endtime="20200321 01:28:18.322"></status>
+</kw>
 <kw name="Get Request" library="RequestsLibrary">
 <doc>Send a GET request on the session object found using the
 given `alias`</doc>
 <arguments>
 <arg>calculator_url</arg>
-<arg>${endpoint}val1=${val1}&amp;val2=${val2}</arg>
+<arg>${endpoint}</arg>
+<arg>params=${params}</arg>
 </arguments>
 <assign>
 <var>${response}</var>
 </assign>
-<msg timestamp="20200320 18:22:27.836" level="INFO">GET Request using : uri=/v1/add?val1=4&amp;val2=4, params=None, allow_redirects=True, timeout=None
+<msg timestamp="20200321 01:28:18.323" level="INFO">GET Request using : uri=/v1/add?, params={'val1': '4', 'val2': '4'}, allow_redirects=True, timeout=None
 headers={'User-Agent': 'python-requests/2.23.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
 data=None 
 json=None</msg>
-<msg timestamp="20200320 18:22:27.840" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20200320 18:22:27.835" endtime="20200320 18:22:27.840"></status>
+<msg timestamp="20200321 01:28:18.328" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20200321 01:28:18.322" endtime="20200321 01:28:18.328"></status>
+</kw>
+<msg timestamp="20200321 01:28:18.328" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20200321 01:28:18.322" endtime="20200321 01:28:18.328"></status>
 </kw>
 <kw name="Convert To String" library="BuiltIn">
 <doc>Converts the given item to a Unicode string.</doc>
@@ -120,8 +168,8 @@ json=None</msg>
 <assign>
 <var>${body}</var>
 </assign>
-<msg timestamp="20200320 18:22:27.841" level="INFO">${body} = {"result":8}</msg>
-<status status="PASS" starttime="20200320 18:22:27.840" endtime="20200320 18:22:27.841"></status>
+<msg timestamp="20200321 01:28:18.329" level="INFO">${body} = {"result":8}</msg>
+<status status="PASS" starttime="20200321 01:28:18.328" endtime="20200321 01:28:18.329"></status>
 </kw>
 <kw name="Should Contain" library="BuiltIn">
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
@@ -129,9 +177,9 @@ json=None</msg>
 <arg>${body}</arg>
 <arg>${result}</arg>
 </arguments>
-<status status="PASS" starttime="20200320 18:22:27.841" endtime="20200320 18:22:27.841"></status>
+<status status="PASS" starttime="20200321 01:28:18.329" endtime="20200321 01:28:18.329"></status>
 </kw>
-<status status="PASS" starttime="20200320 18:22:27.835" endtime="20200320 18:22:27.841"></status>
+<status status="PASS" starttime="20200321 01:28:18.321" endtime="20200321 01:28:18.329"></status>
 </kw>
 <kw name="Result Should Not Be Equals">
 <arguments>
@@ -139,22 +187,46 @@ json=None</msg>
 <arg>${val2}</arg>
 <arg>${improperResult}</arg>
 </arguments>
+<kw name="Create Dictionary And Send Request">
+<arguments>
+<arg>${val1}</arg>
+<arg>${val2}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>val1=${val1}</arg>
+<arg>val2=${val2}</arg>
+</arguments>
+<assign>
+<var>${params}</var>
+</assign>
+<msg timestamp="20200321 01:28:18.330" level="INFO">${params} = {'val1': '4', 'val2': '4'}</msg>
+<status status="PASS" starttime="20200321 01:28:18.330" endtime="20200321 01:28:18.330"></status>
+</kw>
 <kw name="Get Request" library="RequestsLibrary">
 <doc>Send a GET request on the session object found using the
 given `alias`</doc>
 <arguments>
 <arg>calculator_url</arg>
-<arg>${endpoint}val1=${val1}&amp;val2=${val2}</arg>
+<arg>${endpoint}</arg>
+<arg>params=${params}</arg>
 </arguments>
 <assign>
 <var>${response}</var>
 </assign>
-<msg timestamp="20200320 18:22:27.842" level="INFO">GET Request using : uri=/v1/add?val1=4&amp;val2=4, params=None, allow_redirects=True, timeout=None
+<msg timestamp="20200321 01:28:18.330" level="INFO">GET Request using : uri=/v1/add?, params={'val1': '4', 'val2': '4'}, allow_redirects=True, timeout=None
 headers={'User-Agent': 'python-requests/2.23.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
 data=None 
 json=None</msg>
-<msg timestamp="20200320 18:22:27.846" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20200320 18:22:27.841" endtime="20200320 18:22:27.846"></status>
+<msg timestamp="20200321 01:28:18.334" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20200321 01:28:18.330" endtime="20200321 01:28:18.334"></status>
+</kw>
+<msg timestamp="20200321 01:28:18.334" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20200321 01:28:18.329" endtime="20200321 01:28:18.334"></status>
 </kw>
 <kw name="Convert To String" library="BuiltIn">
 <doc>Converts the given item to a Unicode string.</doc>
@@ -164,8 +236,8 @@ json=None</msg>
 <assign>
 <var>${body}</var>
 </assign>
-<msg timestamp="20200320 18:22:27.847" level="INFO">${body} = {"result":8}</msg>
-<status status="PASS" starttime="20200320 18:22:27.846" endtime="20200320 18:22:27.847"></status>
+<msg timestamp="20200321 01:28:18.335" level="INFO">${body} = {"result":8}</msg>
+<status status="PASS" starttime="20200321 01:28:18.334" endtime="20200321 01:28:18.335"></status>
 </kw>
 <kw name="Should Not Contain" library="BuiltIn">
 <doc>Fails if ``container`` contains ``item`` one or more times.</doc>
@@ -173,13 +245,13 @@ json=None</msg>
 <arg>${body}</arg>
 <arg>${result}</arg>
 </arguments>
-<status status="PASS" starttime="20200320 18:22:27.847" endtime="20200320 18:22:27.847"></status>
+<status status="PASS" starttime="20200321 01:28:18.335" endtime="20200321 01:28:18.335"></status>
 </kw>
-<status status="PASS" starttime="20200320 18:22:27.841" endtime="20200320 18:22:27.847"></status>
+<status status="PASS" starttime="20200321 01:28:18.329" endtime="20200321 01:28:18.335"></status>
 </kw>
-<status status="PASS" starttime="20200320 18:22:27.823" endtime="20200320 18:22:27.847" critical="yes"></status>
+<status status="PASS" starttime="20200321 01:28:18.309" endtime="20200321 01:28:18.335" critical="yes"></status>
 </test>
-<status status="PASS" starttime="20200320 18:22:27.766" endtime="20200320 18:22:27.847"></status>
+<status status="PASS" starttime="20200321 01:28:18.254" endtime="20200321 01:28:18.336"></status>
 </suite>
 <statistics>
 <total>
@@ -193,7 +265,7 @@ json=None</msg>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20200320 18:22:27.818" level="ERROR">Error in file '/home/edyta/PycharmProjects/firstOne/TestCases/TC1.robot': Importing test library 'HttpLibrary.HTTP' failed: SyntaxError: invalid syntax (__init__.py, line 16)
+<msg timestamp="20200321 01:28:18.305" level="ERROR">Error in file '/home/edyta/PycharmProjects/firstOne/TestCases/TC1.robot': Importing test library 'HttpLibrary.HTTP' failed: SyntaxError: invalid syntax (__init__.py, line 16)
 Traceback (most recent call last):
   None
 PYTHONPATH:
