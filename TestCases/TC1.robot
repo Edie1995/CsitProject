@@ -13,20 +13,26 @@ ${properResult}     8
 ${improperResult}   6
 
 *** Test Cases ***
-AddValues
+RunHealthcheck
     Create sessions
     Check status And Content Type
+
+AddValuesCorrect
     Result Should Be Equals  ${val1}  ${val2}  ${properResult}
+
+
+AddValuesWrong
     Result Should Not Be Equals   ${val1}  ${val2}   ${improperResult}
 
 *** Keywords ***
 Create Sessions
     create session  calculator_url  ${base_url}
+    Set Suite Variable    ${http_session}    calculator_url
 
 Create Dictionary And Send Request
     [Arguments]     ${val1}     ${val2}
     ${params}=   Create Dictionary   val1=${val1}    val2=${val2}
-    ${response}=    get request  calculator_url     ${endpoint}     params=${params}
+    ${response}=    get request  ${http_session}    ${endpoint}     params=${params}
     [Return]    ${response}
 
 Check Status And Content Type
